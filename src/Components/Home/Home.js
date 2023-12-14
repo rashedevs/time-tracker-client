@@ -22,7 +22,7 @@ const Home = () => {
   const handleAddButtonClick = async () => {
     // Create the data object in the required format
     const postData = {
-      user_id: 1, // Assuming a static user_id for this example
+      user_id: 1,
       date: formData.date,
       start_time: formData.startTime,
       end_time: formData.endTime,
