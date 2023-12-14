@@ -22,11 +22,30 @@ const Entries = () => {
     fetchData();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8800/entries/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        // Update the UI by removing the deleted entry
+        setFormDataArray((prevData) =>
+          prevData.filter((formData) => formData.id !== id)
+        );
+      } else {
+        console.error("Failed to delete entry");
+      }
+    } catch (error) {
+      console.error("Error deleting entry:", error);
+    }
+  };
+
   return (
     <div className="card-container">
       {formDataArray.length > 0 ? (
-        formDataArray.map((formData, index) => (
-          <div key={index} className="card">
+        formDataArray.map((formData) => (
+          <div key={formData.id} className="card">
             <p>
               <strong>Start Time:</strong> {formData.start_time}
             </p>
@@ -39,6 +58,9 @@ const Entries = () => {
             <p>
               <strong>Notes:</strong> {formData.notes}
             </p>
+            <div>
+              <button onClick={() => handleDelete(formData.id)}>Delete</button>
+            </div>
           </div>
         ))
       ) : (
