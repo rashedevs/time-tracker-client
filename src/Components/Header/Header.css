@@ -1,0 +1,19 @@
+
+.nav-container {
+    background-color: hsl(234, 33%, 64%); 
+    padding: 10px; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-container a:hover {
+    text-decoration: underline; 
+}

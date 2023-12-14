@@ -1,9 +1,14 @@
 import React from "react";
-
+import CustomLink from "../CustomLink/CustomLink";
+import "./Header.css";
 const Header = () => {
   return (
     <div>
-      <p>header</p>
+      <nav className="nav-container">
+        <CustomLink to="/">Home</CustomLink>
+        <CustomLink to="/entries">Entries</CustomLink>
+        <CustomLink to="/weeklysheet">Weekly Time Sheet</CustomLink>
+      </nav>
     </div>
   );
 };
