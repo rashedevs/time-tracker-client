@@ -10,7 +10,6 @@ const Entries = () => {
         const response = await fetch("http://localhost:8800/entries");
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
           setFormDataArray(data);
         } else {
           console.error("Failed to fetch data");

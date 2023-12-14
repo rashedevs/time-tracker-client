@@ -1,0 +1,16 @@
+.weekly-sheet-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 46px; 
+  }
+  
+  .chart-card {
+    width: 48%; 
+    height: 400px;
+    margin-bottom: 20px; 
+    border: 1px solid gray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
